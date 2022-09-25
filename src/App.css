@@ -1,38 +1,182 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body,
 .App {
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: #08c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  color: #04c;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.notes {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+
+.notesHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.notesHeader h1 {
+  margin: 0;
+}
+
+.notesSection {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+
+.singleNote {
+  padding: 25px;
+  cursor: pointer;
+}
+
+.noteTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleNote button {
+  color: crimson;
+}
+
+.singleNote p {
+  margin: 10px 0;
+}
+
+.singleNote small {
+  display: block;
+  color: #999;
+}
+
+.singleNote:hover {
+  background: #ddd;
+}
+
+.singleNote.active,
+.singleNote.active small {
+  background: #08c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.appMain {
+  width: 70%;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.noteEdit,
+.notePreview {
+  height: 50vh;
+}
+
+.noActiveNote {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+
+.noteEdit {
+  padding: 25px;
+}
+
+.noteEdit input,
+textarea {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+    overflow: auto;
+    outline: none;
+  
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  
+    resize: none;
+}
+
+select {
+    border: none;
+      overflow: auto;
+      outline: none;
+    
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    
+      resize: none;
+}
+
+
+
+.noteEdit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.previewTitle {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+}
+
+.textPreview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.noteTitleContent {
+  display: flex;
+  align-items: baseline;
+}
+
+.searchInput {
+  width: 80%;
+  padding: 10px 0 10px 10px;
+  margin:0 0px 15px 15px;
+  border: none;
+    overflow: auto;
+    outline: none;
+  
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
